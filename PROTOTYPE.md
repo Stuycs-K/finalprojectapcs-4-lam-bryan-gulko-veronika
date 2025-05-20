@@ -24,30 +24,39 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 How you are breaking down the project and who is responsible for which parts.
 
 - [ ] Create Fruit class
-   - [ ] Create Gravity pulling down fruits
-   - [ ] Make a slice feature
-   - [ ] Points feature to add points for each fruit cut and lead to progression
-- [ ] Create Fruit Subclasses
-    - [ ] Banana
-    - [ ] Kiwi
-    - [ ] Apple
-    - [ ] Pineapple
-    - [ ] Orange
-    - [ ] Create double tap fruit classes
-        - [ ] Coconut
-        - [ ] Watermelon
-        - [ ] Dragon Fruit
-- [ ] Devop lives system
-    - [ ] Create trash pieces (fruits that kill if sliced)
-    - [ ] Take a life for each fruit that hits the ground without being sliced
-    - [ ] Create bombs that annihilate everything
-- [ ] Progression of Game
-    - [ ] Speed up (fruits accelerate)
-    - [ ] Increase Frequency of fruits falling
-- [ ] Loading Screen
-    - [ ] Start Button
-    - [ ] Description of fruits/lives/points
-    - [ ] Options for easy, medium, and hard, which affects the starting frequency and speed
+   - [ ] Create Gravity pulling down fruits (Bryan)
+   - [ ] Make a slice feature (Veronika)
+   - [ ] Points feature to add points for each fruit cut and lead to progression (Bryan)
 
-A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
+
+- [ ] Create Fruit Subclasses
+    - [ ] Banana (Veronika)
+    - [ ] Kiwi  (Bryan)
+    - [ ] Apple (Veronika)
+    - [ ] Pineapple (Bryan)
+    - [ ] Orange (Veronika)
+    
+   
+    - [ ] Create double tap fruit classes
+        - [ ] Coconut (Bryan)
+        - [ ] Watermelon (Veronika)
+        - [ ] Dragon Fruit (Bryan)
+
+
+- [ ] Devop lives system
+    - [ ] Create trash pieces (fruits that kill if sliced) (Veronika)
+    - [ ] Take a life for each fruit that hits the ground without being sliced (Bryan)
+    - [ ] Create bombs that annihilate everything (Veronika)
+
+
+- [ ] Progression of Game
+    - [ ] Speed up (fruits accelerate) (Bryan)
+    - [ ] Increase Frequency of fruits falling (Veronika)
+
+
+- [ ] Loading Screen
+    - [ ] Start Button (Bryan)
+    - [ ] Description of fruits/lives/points (Veronika)
+    - [ ] Options for easy, medium, and hard, which affects the starting frequency and speed (Bryan)
+
 
