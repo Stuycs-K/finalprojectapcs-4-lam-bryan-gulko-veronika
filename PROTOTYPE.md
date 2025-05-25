@@ -44,7 +44,7 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 ![UML diagram](UML.png?raw=true "uml" )
 
     
-# Intended pacing:
+# Intended pacing
 
 How you are breaking down the project and who is responsible for which parts.
 
