@@ -55,12 +55,15 @@ How you are breaking down the project and who is responsible for which parts.
 
 
 - [ ] Create Fruit Subclasses
-    - [ ] Banana (Veronika)
+   ~ - [ ] Banana (Veronika)
     - [ ] Kiwi  (Bryan)
     - [ ] Apple (Veronika)
     - [ ] Pineapple (Bryan)
-    - [ ] Orange (Veronika)
+    - [ ] Orange (Veronika) ~
     
+# Updated:
+
+All of the regular fruits are part of the parent Fruit Class. Only  trash and double tap fruits are subclasses. Lives and progression will be done in main.
    
     - [ ] Create double tap fruit classes
         - [ ] Coconut (Bryan)
