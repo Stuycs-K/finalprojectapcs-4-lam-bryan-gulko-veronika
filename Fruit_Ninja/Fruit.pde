@@ -20,8 +20,21 @@ class Fruit{
      y = 0;
   }
   
-  void display(){
+  void visualizer(){
+    gravity();
     PImage f = loadImage(current);
     image(f, x, y);
   }
+  
+  void gravity(){
+    y += (int)speed;
+  }
+  
+  void points(){
+    PImage f = loadImage(current);
+    if (mouseX >= x - (f.width / 2) && mouseX <= x + (f.width / 2) && mouseY >= y - (f.height / 2) && mouseY <= y + (f.height / 2)){
+      points += 5;
+    }
+  }
+  
 }
