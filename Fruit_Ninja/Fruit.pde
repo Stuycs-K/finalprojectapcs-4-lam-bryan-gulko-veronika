@@ -34,6 +34,7 @@ class Fruit{
     PImage f = loadImage(current);
     if (mouseX >= x - (f.width / 2) && mouseX <= x + (f.width / 2) && mouseY >= y - (f.height / 2) && mouseY <= y + (f.height / 2)){
       points += 5;
+      current = sliced[nameIndex];
     }
   }
   
