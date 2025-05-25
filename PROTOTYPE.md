@@ -41,7 +41,7 @@ Progressive Challenge: As the game continues, fruit speed and spawn rate should 
 # Project Design
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
-
+![UML diagram](UML.png?raw=true "uml" )
 
     
 # Intended pacing:
