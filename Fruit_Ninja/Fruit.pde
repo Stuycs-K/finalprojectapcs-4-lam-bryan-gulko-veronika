@@ -1,8 +1,8 @@
 class Fruit{
   
-  int[] name;
-  String[] sliced;
-  String[] full;
+  int[] name = new int[]{0, 1, 2, 3, 4};
+  String[] sliced = new String[name.length];
+  String[] full = new String[name.length];
   int nameIndex;
   String current;
   boolean cut;
@@ -10,9 +10,6 @@ class Fruit{
   int y;
   
   public Fruit(){
-     name = new int[]{0, 1, 2, 3, 4};
-     sliced = new String[name.length];
-     full = new String[name.length];
      nameIndex = (int)Math.random() * name.length;
      cut = false;
      current = full[nameIndex];
