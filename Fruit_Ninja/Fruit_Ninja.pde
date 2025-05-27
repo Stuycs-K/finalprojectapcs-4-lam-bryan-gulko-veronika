@@ -1,12 +1,12 @@
-class Game{
   int mode;
   int lives;
   double speed;
   double frequency;
   int points;
+  PImage titleScreen;
   
 void setup() {
-  size(800, 600);
+  size(800, 800);
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
   // gameScreen = loadImage("game.png");
@@ -19,3 +19,4 @@ void draw() {
     // image(gameScreen, 0, 0, width, height);
     // or draw game logic here
   }
+}
