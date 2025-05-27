@@ -1,6 +1,6 @@
 class Fruit{
   
-  int[] name = new int[]{0, 1, 2, 3, 4};
+  String[] name = new String[]{"kiwi", "orange", "banana", "pineapple", "apple"};
   String[] sliced = new String[name.length];
   String[] full = new String[name.length];
   int nameIndex;
@@ -10,7 +10,7 @@ class Fruit{
   int y;
   
   public Fruit(){
-     nameIndex = (int)Math.random() * name.length;
+     int nameIndex = (int)Math.random() * name.length;
      cut = false;
      current = full[nameIndex];
      x = (int)Math.random() * displayWidth;
@@ -32,6 +32,7 @@ class Fruit{
     if (mouseX >= x - (f.width / 2) && mouseX <= x + (f.width / 2) && mouseY >= y - (f.height / 2) && mouseY <= y + (f.height / 2)){
       points += 5;
       current = sliced[nameIndex];
+      cut = true;
     }
   }
   
