@@ -1,6 +1,6 @@
 class Trash extends Fruit{
  
-  int[] nameT = new int[]{0, 1, 2};
+  String[] nameT = new String[]{"bags", "water bottle"};
   String[] trash = new String[nameT.length];
   
   public Trash(){
