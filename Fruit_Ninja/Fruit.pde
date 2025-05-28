@@ -10,7 +10,7 @@ class Fruit{
   int y;
   
   public Fruit(){
-     int nameIndex = (int)Math.random() * name.length;
+     nameIndex = (int)Math.random() * name.length;
      cut = false;
      current = full[nameIndex];
      x = (int)Math.random() * displayWidth;
@@ -18,9 +18,9 @@ class Fruit{
   }
   
   void visualizer(){
-    gravity();
     PImage f = loadImage(current);
     image(f, x, y);
+    gravity();
   }
   
   void gravity(){
