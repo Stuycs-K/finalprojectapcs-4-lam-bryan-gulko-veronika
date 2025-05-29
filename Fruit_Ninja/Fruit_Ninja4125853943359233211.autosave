@@ -1,4 +1,3 @@
-class Game{
   int mode;
   int lives;
   double speed;
@@ -20,5 +19,4 @@ void draw() {
     // image(gameScreen, 0, 0, width, height);
     // or draw game logic here
   }
-}
 }
