@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-=======
-class Game{
->>>>>>> d86e4a7bcc344fd0e3a57a9f4a15173b4c962d96
   int mode;
   int lives;
   double speed;
   double frequency;
   int points;
-<<<<<<< HEAD
   PImage titleScreen;
   
 void setup() {
@@ -17,18 +12,20 @@ void setup() {
   // gameScreen = loadImage("game.png");
 }
 
-void draw() {
+void slider1(){
+      color(000000);
+  ellipse(215,430, 20, 20);
+  if(mouseX > 100 && mouseX < 300 && mouseY > 500 && mouseY < 400){
+      ellipse(mouseX,430, 20, 20);
+  }
+} 
+
+void draw(){
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
+    slider1();
   //} else if (mode  == 1) {
     // image(gameScreen, 0, 0, width, height);
     // or draw game logic here
   }
-=======
-  
-setup(){
-}
-draw(){
-}
->>>>>>> d86e4a7bcc344fd0e3a57a9f4a15173b4c962d96
 }
