@@ -1,15 +1,12 @@
-<<<<<<< HEAD
-=======
-class Game{
->>>>>>> d86e4a7bcc344fd0e3a57a9f4a15173b4c962d96
+class Game {
   int mode;
   int lives;
   double speed;
   double frequency;
   int points;
-<<<<<<< HEAD
   PImage titleScreen;
-  
+  PImage gameScreen;
+
 void setup() {
   size(800, 800);
   mode = 0;
@@ -24,11 +21,9 @@ void draw() {
     // image(gameScreen, 0, 0, width, height);
     // or draw game logic here
   }
-=======
   
 setup(){
 }
 draw(){
 }
->>>>>>> d86e4a7bcc344fd0e3a57a9f4a15173b4c962d96
 }
