@@ -44,7 +44,10 @@ void draw(){
           }
           fruits.remove(i);
         }
-      }
+      }  
+      fill(0);
+      text("Lives: " + lives, 20, 20);
+      text("Points: " + points, 20, 40);
 }
 
  void setLives(int l) {
