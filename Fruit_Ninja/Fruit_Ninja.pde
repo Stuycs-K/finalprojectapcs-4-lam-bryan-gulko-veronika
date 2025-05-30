@@ -6,12 +6,20 @@ class Game {
   int points;
   PImage titleScreen;
   PImage gameScreen;
+  
+  ArrayList<Fruit> fruits;
 
 void setup() {
   size(800, 800);
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
-  // gameScreen = loadImage("game.png");
+  lives = 3;
+  speed = 2.5;
+  points = 0;
+  frequency = 0.01;
+  titleScreen = loadImage("loading_screen.png");
+  gameScreen = loadImage("game_screen.png");
+  fruits = new ArrayList<Fruit>();
 }
 
 void draw() {
