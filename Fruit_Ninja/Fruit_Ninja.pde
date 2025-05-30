@@ -6,7 +6,7 @@ class Game {
   int points;
   PImage titleScreen;
   PImage gameScreen;
-  
+
   ArrayList<Fruit> fruits;
 
 void setup() {
@@ -22,14 +22,14 @@ void setup() {
   fruits = new ArrayList<Fruit>();
 }
 
-void draw() {
+void draw(){
   if (mode == 0) {
-    image(titleScreen, 0, 0, width, height);
-  //} else if (mode  == 1) {
-    // image(gameScreen, 0, 0, width, height);
-    // or draw game logic here
-  }
+      image(titleScreen, 0, 0, width, height);
+    } else if (mode == 1) {
+      image(gameScreen, 0, 0, width, height);
+    }
 }
+
  void setLives(int l) {
     lives = l;
   }
