@@ -2,7 +2,7 @@ class HardFruit extends Fruit{
   
   String[] nameH = new String[]{"coconut", "watermelon", "dragon fruit"};
   String[] slicedH = new String[nameH.length];
-  String[] wholeH = new String[nameH.length];
+  String[] wholeH = new String[]{"coconut.png", "watermelon.png", "dragon.png"};
   int fruitLife;
   
   public HardFruit(){

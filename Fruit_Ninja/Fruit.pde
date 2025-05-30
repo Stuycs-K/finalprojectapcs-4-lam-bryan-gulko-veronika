@@ -2,7 +2,7 @@ class Fruit{
   
   String[] name = new String[]{"kiwi", "orange", "banana", "pineapple", "apple"};
   String[] sliced = new String[name.length];
-  String[] full = new String[name.length];
+  String[] full = new String[]{"orange.png", "banana.png", "apple.png"};
   int nameIndex;
   String current;
   boolean cut;
