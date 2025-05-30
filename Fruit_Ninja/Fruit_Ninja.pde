@@ -29,9 +29,16 @@ void draw() {
     // image(gameScreen, 0, 0, width, height);
     // or draw game logic here
   }
-  
-setup(){
 }
-draw(){
-}
+ void setLives(int l) {
+    lives = l;
+  }
+
+  void setPoints(int p) {
+    points = p;
+  }
+
+  void setMode(int m) {
+    mode = m;
+  }
 }
