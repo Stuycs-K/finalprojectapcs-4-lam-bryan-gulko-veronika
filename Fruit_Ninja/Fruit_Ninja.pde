@@ -28,6 +28,23 @@ void draw(){
     } else if (mode == 1) {
       image(gameScreen, 0, 0, width, height);
     }
+      if (random(1) < frequency) {
+        fruits.add(new Fruit(speed));
+      }
+
+      for (int i = fruits.size() - 1; i >= 0; i--) {
+        Fruit f = fruits.get(i);
+        f.visualizer();
+        f.checkSlice(mouseX, mouseY);
+        if (f.y > height) {
+          if (f.cut) {
+            points += 5;
+          } else {
+            lives--;
+          }
+          fruits.remove(i);
+        }
+      }
 }
 
  void setLives(int l) {
