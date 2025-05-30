@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class Game{
   int mode;
   int lives;
@@ -11,7 +11,7 @@ setup(){
 draw(){
 }
 }
-=======
+
 int points;
 double frequency;
 double speed;
@@ -68,5 +68,3 @@ void draw(){
     }
   }
         
-  
->>>>>>> Bryan-Branch
