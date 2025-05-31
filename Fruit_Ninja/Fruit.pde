@@ -20,22 +20,25 @@ class Fruit{
   }
   
   void visualizer(){
+    gravity();
     PImage f = loadImage(current);
     image(f, x, y);
-    gravity();
   }
   
   void gravity(){
-    y += (int)speed;
+    y += speed;
   }
   
-  void points(){
+  void checkSlice(){
+    if (!cut){
     PImage f = loadImage(current);
-    if (mouseX >= x - (f.width / 2) && mouseX <= x + (f.width / 2) && mouseY >= y - (f.height / 2) && mouseY <= y + (f.height / 2)){
-      points += 5;
+    int w = f.width / 2;
+    int h = f.height / 2;
+    if (mouseX >= x - w && mouseX <= x + w && mouseY >= y - h && mouseY <= y + h && mousePressed){
       current = sliced[nameIndex];
       cut = true;
     }
+  }
   }
   
 }
