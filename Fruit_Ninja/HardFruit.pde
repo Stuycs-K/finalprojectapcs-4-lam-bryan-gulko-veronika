@@ -5,20 +5,21 @@ class HardFruit extends Fruit{
   String[] wholeH = new String[]{"coconut.png", "watermelon.png", "dragon.png"};
   int fruitLife;
   
-  public HardFruit(){
-    super();
+  public HardFruit(double s){
+    super(s);
     nameIndex = (int)Math.random() * nameH.length;
     current = wholeH[nameIndex];
     fruitLife = 2;
   }
   
-  void points(){
+  void checkSlice(){
     PImage f = loadImage(current);
-    if (mouseX >= x - (f.width / 2) && mouseX <= x + (f.width / 2) && mouseY >= y - (f.height / 2) && mouseY <= y + (f.height / 2)){
+    int w = f.width / 2;
+    int h = f.height / 2;
+    if (mouseX >= x - w && mouseX <= x + w && mouseY >= y - h && mouseY <= y + h && mousePressed){
       fruitLife -= 1;
       if (fruitLife == 0){
         current = slicedH[nameIndex];
-        points += 10;
         cut = true;
       }
     }
