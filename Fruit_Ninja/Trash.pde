@@ -1,7 +1,7 @@
 class Trash extends Fruit{
  
   String[] nameT = new String[]{"bags", "water bottle"};
-  String[] trash = new String[]{"bag.png", "bottle.png"};
+  String[] trash = new String[]{"trash.png", "bottle.png"};
   boolean fatal;
   
   public Trash(double s){
