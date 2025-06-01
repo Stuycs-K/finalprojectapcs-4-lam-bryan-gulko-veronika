@@ -11,10 +11,10 @@ class Fruit{
   float speed;
   
   public Fruit(double s){
-     nameIndex = (int)Math.random() * name.length;
+     nameIndex = (int)(Math.random() * name.length);
      cut = false;
      current = full[nameIndex];
-     x = (int)Math.random() * (displayWidth - 200) + 100;
+     x = (int)(Math.random() * (displayWidth - 200) + 100);
      y = 0;
      speed = (float)s;
   }

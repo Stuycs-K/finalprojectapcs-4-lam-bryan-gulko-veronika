@@ -6,7 +6,7 @@ class Trash extends Fruit{
   
   public Trash(double s){
     super(s);
-    nameIndex = (int)Math.random() * nameT.length;
+    nameIndex = (int)(Math.random() * nameT.length);
     current = trash[nameIndex];
     fatal = false;
   }

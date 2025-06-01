@@ -7,7 +7,7 @@ class HardFruit extends Fruit{
   
   public HardFruit(double s){
     super(s);
-    nameIndex = (int)Math.random() * nameH.length;
+    nameIndex = (int)(Math.random() * nameH.length);
     current = wholeH[nameIndex];
     fruitLife = 2;
   }
