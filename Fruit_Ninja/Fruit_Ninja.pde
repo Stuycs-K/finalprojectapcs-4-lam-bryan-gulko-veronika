@@ -1,4 +1,3 @@
-class Game {
   int mode;
   int lives;
   double speed;
@@ -6,7 +5,7 @@ class Game {
   int points;
   PImage titleScreen;
   PImage gameScreen;
-
+  
   ArrayList<Fruit> fruits;
 
 void setup() {
@@ -22,34 +21,14 @@ void setup() {
   fruits = new ArrayList<Fruit>();
 }
 
-void draw(){
+void draw() {
   if (mode == 0) {
-      image(titleScreen, 0, 0, width, height);
-    } else if (mode == 1) {
-      image(gameScreen, 0, 0, width, height);
-    }
-      if (random(1) < frequency) {
-        fruits.add(new Fruit(speed));
-      }
-
-      for (int i = fruits.size() - 1; i >= 0; i--) {
-        Fruit f = fruits.get(i);
-        f.visualizer();
-        f.checkSlice(mouseX, mouseY);
-        if (f.y > height) {
-          if (f.cut) {
-            points += 5;
-          } else {
-            lives--;
-          }
-          fruits.remove(i);
-        }
-      }  
-      fill(0);
-      text("Lives: " + lives, 20, 20);
-      text("Points: " + points, 20, 40);
+    image(titleScreen, 0, 0, width, height);
+  //} else if (mode  == 1) {
+    // image(gameScreen, 0, 0, width, height);
+    // or draw game logic here
+  }
 }
-
  void setLives(int l) {
     lives = l;
   }
@@ -61,4 +40,3 @@ void draw(){
   void setMode(int m) {
     mode = m;
   }
-}
