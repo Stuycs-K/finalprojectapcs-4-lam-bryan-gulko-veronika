@@ -26,7 +26,29 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
+  }
+  for (int i = fruits.size() - 1; i >= 0; i--) {
+    Fruit f = fruits.get(i);
+    f.visualizer();
+    f.checkSlice();
 
+  if (f.y > height) {
+      if (!f.cut) {
+        lives--;
+      } else {
+        points += 5;
+      }
+      fruits.remove(i);
+    }
+  }
+     fill(0);
+  textSize(24);
+  text("Lives: " + lives, 20, 30);
+  text("Points: " + points, 20, 60);
+  if (lives <= 0) {
+    text("Game Over!", width/2 - 60, height/2);
+    noLoop(); 
+  }
 }
  void setLives(int l) {
     lives = l;
