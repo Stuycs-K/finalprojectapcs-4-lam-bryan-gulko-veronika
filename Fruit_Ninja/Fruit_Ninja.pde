@@ -26,7 +26,20 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
-  
+  }
+  for (int i = fruits.size() - 1; i >= 0; i--) {
+    Fruit f = fruits.get(i);
+    f.visualizer();
+    f.checkSlice();
+
+  if (f.y > height) {
+      if (!f.cut) {
+        lives--;
+      } else {
+        points += 5;
+      }
+      fruits.remove(i);
+    }
   }
 }
  void setLives(int l) {
