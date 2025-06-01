@@ -21,6 +21,12 @@ void setup() {
   fruits = new ArrayList<Fruit>();
 }
 
+void mousePressed() {
+  if (mode == 0) {
+    setMode(1); // start game
+  }
+}
+
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
