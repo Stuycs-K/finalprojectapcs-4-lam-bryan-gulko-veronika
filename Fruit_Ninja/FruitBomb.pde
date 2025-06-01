@@ -10,7 +10,7 @@ class FruitBomb extends Fruit{
   
   String destruct(){
     PImage b = loadImage(exp);
-    if (mouseX >= x - (b.width / 2) && mouseX <= x + (b.width / 2) && mouseY >= y - (b.height / 2) && mouseY <= y + (b.height / 2)){
+    if (mouseX >= x - (b.width / 2) && mouseX <= x + (b.width / 2) && mouseY >= y - (b.height / 2) && mouseY <= y + (b.height / 2) && mousePressed){
        image(b, x, y);
        return "Game Over!";
     }else{
