@@ -24,10 +24,9 @@ void setup() {
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
-  //} else if (mode  == 1) {
-    // image(gameScreen, 0, 0, width, height);
-    // or draw game logic here
-  }
+  } else if (mode == 1) {
+  image(gameScreen, 0, 0, width, height);
+
 }
  void setLives(int l) {
     lives = l;
