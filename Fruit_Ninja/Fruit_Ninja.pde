@@ -26,7 +26,8 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
-
+  
+  }
 }
  void setLives(int l) {
     lives = l;
