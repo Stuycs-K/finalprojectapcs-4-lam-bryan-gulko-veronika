@@ -1,4 +1,3 @@
-class Game {
   int mode;
   int lives;
   double speed;
@@ -41,4 +40,3 @@ void draw() {
   void setMode(int m) {
     mode = m;
   }
-}

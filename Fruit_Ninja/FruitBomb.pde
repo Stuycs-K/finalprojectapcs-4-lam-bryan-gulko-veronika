@@ -2,8 +2,6 @@ class FruitBomb extends Fruit{
  
   String pic = "bomb.png";
   String exp = "explosion.png";
-  int x;
-  int y;
   
   public FruitBomb(double s){
     super(s);
