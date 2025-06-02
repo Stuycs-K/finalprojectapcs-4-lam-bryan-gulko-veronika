@@ -5,6 +5,7 @@
   int points;
   PImage titleScreen;
   PImage gameScreen;
+  int lastSpawnTime; 
   
   ArrayList<Fruit> fruits;
 
@@ -19,6 +20,7 @@ void setup() {
   titleScreen = loadImage("loading_screen.png");
   gameScreen = loadImage("game_screen.png");
   fruits = new ArrayList<Fruit>();
+  lastSpawnTime = millis();
 }
 
 void mousePressed() {
@@ -36,14 +38,14 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
-  for (int j = 0; j < frequency; j++){
-      Fruit g = new Fruit(speed);
-      fruits.add(g);
+  if (millis() - lastSpawnTime >= frequency * 1000) {
+    fruits.add(new Fruit(speed));
+    lastSpawnTime = millis();
     }
   for (int i = fruits.size() - 1; i >= 0; i--) {
     Fruit f = fruits.get(i);
     f.visualizer();
-    f.checkSlice();
+    f.trySlice(mouseX, mouseY);
     if (f.y > height) {
       if (!f.cut) {
         lives--;
