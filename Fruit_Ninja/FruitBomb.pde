@@ -1,6 +1,6 @@
 class FruitBomb extends Fruit{
  
-  String pic = "bomb.png";
+  String pic = "Bomb.png";
   String exp = "explosion.png";
   
   public FruitBomb(double s){

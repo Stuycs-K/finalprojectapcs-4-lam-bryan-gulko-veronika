@@ -2,7 +2,7 @@ class Fruit{
   
   String[] name = new String[]{"kiwi", "orange", "banana", "pineapple", "apple"};
   String[] sliced = new String[]{"kiwi_sliced.png", "orange_sliced.png", "banana_sliced.png", "pineapple_sliced.png", "apple_sliced.png"};
-  String[] full = new String[]{"kiwi.png", "orange.png", "banana.png", "pineapple.png", "apple.png"};
+  String[] full = new String[]{"kiwi.png", "orange.png", "Banana.png", "pineapple.png", "apple.png"};
   int nameIndex;
   String current;
   boolean cut;
@@ -11,10 +11,10 @@ class Fruit{
   float speed;
   
   public Fruit(double s){
-     nameIndex = (int)Math.random() * name.length;
+     nameIndex = (int)(Math.random() * name.length);
      cut = false;
      current = full[nameIndex];
-     x = (int)Math.random() * (displayWidth - 200) + 100;
+     x = (int)(Math.random() * (displayWidth - 300) + 100);
      y = 0;
      speed = (float)s;
   }
@@ -22,7 +22,7 @@ class Fruit{
   void visualizer(){
     gravity();
     PImage f = loadImage(current);
-    image(f, x, y);
+    image(f, x, y, 30, 30);
   }
   
   void gravity(){
