@@ -19,8 +19,6 @@ void setup() {
   titleScreen = loadImage("loading_screen.png");
   gameScreen = loadImage("game_screen.png");
   fruits = new ArrayList<Fruit>();
-  Fruit a = new Fruit(speed);
-  fruits.add(a);
 }
 
 void mousePressed() {
@@ -34,29 +32,23 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
-  for (int i = fruits.size() - 1; i >= 0; i--) {
-    Fruit f = fruits.get(i);
-    f.visualizer();
-    f.checkSlice();
-  if (f.y > height) {
-      if (!f.cut) {
-        lives--;
-      } else {
-        points += 5;
-      }
-      fruits.remove(i);
-    }
-    /*
-    for (int j = 0; j < frequency; j++){
-      Fruit g = new Fruit(speed);
-      fruits.add(g);
-    }
-    */
-  }
   for (int j = 0; j < frequency; j++){
       Fruit g = new Fruit(speed);
       fruits.add(g);
     }
+  for (int i = fruits.size() - 1; i >= 0; i--) {
+    Fruit f = fruits.get(i);
+    f.visualizer();
+    f.checkSlice();
+    if (f.y > height) {
+      if (!f.cut) {
+        lives--;
+      }else{
+        points += 5;
+      }
+      fruits.remove(i);
+    }
+  }
      fill(0);
   textSize(24);
   text("Lives: " + lives, 20, 30);
