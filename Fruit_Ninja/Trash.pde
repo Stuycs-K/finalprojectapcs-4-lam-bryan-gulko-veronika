@@ -2,22 +2,21 @@ class Trash extends Fruit{
  
   String[] nameT = new String[]{"bags", "water bottle"};
   String[] trash = new String[]{"trash.png", "bottle.png"};
-  boolean fatal;
   
   public Trash(double s){
     super(s);
     nameIndex = (int)(Math.random() * nameT.length);
     current = trash[nameIndex];
+    currentImage = loadImage(current);
     fatal = false;
   }
   
-  boolean lives(){
-    PImage f = loadImage(current);
-    int w = f.width / 2;
-    int h = f.width / 2;
-    if (mouseX >= x - w && mouseX <= x + w && mouseY >= y - h && mouseY <= y + w && mousePressed){
+  @Override
+  void trySlice(int mx, int my){
+    int w = 38;
+    int h = 38;
+    if (mx >= x - w && mx <= x + w && my >= y - h && my <= y + w){
       fatal = true;
     }
-    return fatal;
   }
 }
