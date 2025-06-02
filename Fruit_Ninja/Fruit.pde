@@ -29,16 +29,15 @@ class Fruit{
     y += speed;
   }
   
-  void checkSlice(){
-    if (!cut){
-    PImage f = loadImage(current);
-    int w = f.width / 2;
-    int h = f.height / 2;
-    if (mouseX >= x - w && mouseX <= x + w && mouseY >= y - h && mouseY <= y + h && mousePressed){
-      current = sliced[nameIndex];
-      cut = true;
+  void trySlice(int mx, int my) {
+    if (!cut) {
+      int halfW = 15; 
+      int halfH = 15;
+      if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
+        cut = true;
+        img = slicedImg;
+      }
     }
-  }
   }
   
 }
