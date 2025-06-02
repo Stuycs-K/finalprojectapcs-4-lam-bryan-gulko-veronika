@@ -71,6 +71,10 @@ void draw() {
 }
  void setLives(int l) {
     lives = l;
+    if (lives <= 0) {
+    text("Game Over!", width/2 - 60, height/2);
+    noLoop(); 
+  }
   }
 
   void setPoints(int p) {
