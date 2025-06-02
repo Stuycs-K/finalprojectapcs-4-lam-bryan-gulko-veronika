@@ -8,6 +8,7 @@ class Trash extends Fruit{
     nameIndex = (int)(Math.random() * nameT.length);
     current = trash[nameIndex];
     currentImage = loadImage(current);
+    fatal = false;
   }
   
   @Override

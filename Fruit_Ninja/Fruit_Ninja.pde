@@ -43,7 +43,8 @@ void draw() {
        fruits.add(new FruitBomb(speed));
     } 
     else if (Math.random() < 0.2){
-      fruits.add(new HardFruit(speed));}
+      fruits.add(new HardFruit(speed));
+    }
     else if (Math.random() < 0.3){
       fruits.add(new Trash(speed));
     }
