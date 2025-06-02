@@ -18,14 +18,14 @@ class Fruit{
      current = full[nameIndex];
      currentImage = loadImage(current);
      // check these bounds
-     x = (int)(Math.random() * (displayWidth - 300) + 50);
+    x = (int)(Math.random() * (width - 60) + 30);
      y = 0;
      speed = (float)s;
   }
   
   void visualizer(){
     gravity();
-    image(currentImage, x, y, 50, 50);
+    image(currentImage, x, y, 75, 75);
   }
   
   void gravity(){
@@ -34,8 +34,8 @@ class Fruit{
   
   void trySlice(int mx, int my) {
     if (!cut) {
-      int halfW = 25; 
-      int halfH = 25;
+      int halfW = 38; 
+      int halfH = 38;
       if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
         cut = true;
         current = sliced[nameIndex];
