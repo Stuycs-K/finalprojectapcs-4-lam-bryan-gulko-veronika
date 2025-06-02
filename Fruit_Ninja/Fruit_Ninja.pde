@@ -23,7 +23,11 @@ void setup() {
 
 void mousePressed() {
   if (mode == 0) {
-    setMode(1); // start game
+    setMode(1); // Start game
+  } else if (mode == 1) {
+    for (Fruit f : fruits) {
+      f.trySlice(mouseX, mouseY);
+    }
   }
 }
 
