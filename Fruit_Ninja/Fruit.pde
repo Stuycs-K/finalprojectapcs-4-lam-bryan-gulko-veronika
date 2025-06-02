@@ -14,7 +14,7 @@ class Fruit{
      nameIndex = (int)(Math.random() * name.length);
      cut = false;
      current = full[nameIndex];
-     x = (int)(Math.random() * (displayWidth - 300) + 100);
+     x = (int)(Math.random() * (displayWidth - 300) + 50);
      y = 0;
      speed = (float)s;
   }
