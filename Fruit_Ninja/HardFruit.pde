@@ -21,6 +21,7 @@ class HardFruit extends Fruit{
       if (fruitLife == 0){
         current = slicedH[nameIndex];
         cut = true;
+        fatal = false;
       }
     }
   }

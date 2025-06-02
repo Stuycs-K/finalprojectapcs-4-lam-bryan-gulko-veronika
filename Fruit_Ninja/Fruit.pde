@@ -6,6 +6,7 @@ class Fruit{
   int nameIndex;
   String current;
   boolean cut;
+  boolean fatal;
   int x;
   int y;
   float speed;
@@ -15,6 +16,7 @@ class Fruit{
   public Fruit(double s){
      nameIndex = (int)(Math.random() * name.length);
      cut = false;
+     fatal = true;
      current = full[nameIndex];
      currentImage = loadImage(current);
      // check these bounds
@@ -38,6 +40,7 @@ class Fruit{
       int halfH = 38;
       if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
         cut = true;
+        fatal = false;
         current = sliced[nameIndex];
         currentImage = loadImage(current);
       }

@@ -9,6 +9,7 @@ class FruitBomb extends Fruit{
     current = pic;
     currentImage = loadImage(current);
     explosionImg = loadImage(exp);
+    fatal = false;
   }
   
   @Override
