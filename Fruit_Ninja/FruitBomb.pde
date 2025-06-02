@@ -18,7 +18,7 @@ class FruitBomb extends Fruit{
     if (mx >= x - w && mx <= x + w && my >= y - h && my <= y + h && !cut) {
       cut = true;
       currentImage = explosionImg;
-      lives = 0;  
+      setLives(0);
     }
   }
 }
