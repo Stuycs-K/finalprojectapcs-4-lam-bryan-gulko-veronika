@@ -39,7 +39,11 @@ void draw() {
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
   if (millis() - lastSpawnTime >= frequency * 1000) {
-    fruits.add(new Fruit(speed));
+    if (Math.random() < 0.2) {  // 20% chance of being a bomb
+       fruits.add(new FruitBomb(speed));
+    } else {
+      fruits.add(new Fruit(speed));
+    }
     lastSpawnTime = millis();
     }
   for (int i = fruits.size() - 1; i >= 0; i--) {
