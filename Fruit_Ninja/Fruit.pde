@@ -10,7 +10,8 @@ class Fruit{
   int y;
   float speed;
   PImage currentImage;
-  
+    boolean bomb_cut;
+
   
   public Fruit(double s){
      nameIndex = (int)(Math.random() * name.length);
