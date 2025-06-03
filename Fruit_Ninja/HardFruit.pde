@@ -9,6 +9,7 @@ class HardFruit extends Fruit{
     super(s);
     nameIndex = (int)(Math.random() * nameH.length);
     current = wholeH[nameIndex];
+    currentImage = loadImage(current);
     fruitLife = 2;
   }
   
@@ -20,6 +21,7 @@ class HardFruit extends Fruit{
       fruitLife -= 1;
       if (fruitLife == 0){
         current = slicedH[nameIndex];
+        currentImage = loadImage(current);
         cut = true;
         fatal = false;
       }
