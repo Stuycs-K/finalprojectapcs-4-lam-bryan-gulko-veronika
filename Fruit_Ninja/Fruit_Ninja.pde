@@ -6,6 +6,7 @@
   PImage titleScreen;
   PImage deadScreen;
   PImage gameScreen;
+  PImage heart;
   int lastSpawnTime; 
   
   ArrayList<Fruit> fruits;
@@ -21,6 +22,7 @@ void setup() {
   titleScreen = loadImage("loading_screen.png");
   gameScreen = loadImage("game_screen.png");
   deadScreen = loadImage("dead_screen.png");
+  heart = loadImage("heart.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
 }
@@ -67,9 +69,11 @@ void draw() {
       fruits.remove(i);
     }
   }
+  for(int i = 0; i < lives; i++){
+     image(heart, 20 + (i * 40), 30, 40, 40);
+  }
      fill(0);
   textSize(24);
-  text("Lives: " + lives, 20, 30);
   text("Points: " + points, 20, 60);
   if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
