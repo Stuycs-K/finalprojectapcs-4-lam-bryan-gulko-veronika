@@ -4,6 +4,7 @@
   double frequency;
   int points;
   PImage titleScreen;
+  PImage deadScreen;
   PImage gameScreen;
   int lastSpawnTime; 
   
@@ -19,6 +20,7 @@ void setup() {
   frequency = 1;
   titleScreen = loadImage("loading_screen.png");
   gameScreen = loadImage("game_screen.png");
+  deadScreen = loadImage("dead_screen.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
 }
@@ -39,10 +41,10 @@ void draw() {
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
   if (millis() - lastSpawnTime >= frequency * 1000) {
-    if (Math.random() < 0.1) {  // 20% chance of being a bomb
+    if (Math.random() < 0.2) {  // 20% chance of being a bomb
        fruits.add(new FruitBomb(speed));
     } 
-    else if (Math.random() < 0.2){
+    else if (Math.random() < 0.4){
       fruits.add(new HardFruit(speed));}
     else {
       fruits.add(new Fruit(speed));
@@ -70,6 +72,9 @@ void draw() {
     text("Game Over!", width/2 - 60, height/2);
     noLoop(); 
   }
+  }
+  else if(mode == 2){
+    image(deadScreen, 0,0, width, height);
   }
 }
  void setLives(int l) {
