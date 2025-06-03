@@ -44,8 +44,11 @@ void draw() {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
        fruits.add(new FruitBomb(speed));
     } 
-    else if (Math.random() < 0.4){
+    else if (Math.random() < 0.3){
       fruits.add(new HardFruit(speed));}
+    else if (Math.random() < 0.4){
+      fruits.add(new Trash(speed));
+    }
     else {
       fruits.add(new Fruit(speed));
     }
@@ -56,7 +59,7 @@ void draw() {
     f.visualizer();
     f.trySlice(mouseX, mouseY);
     if (f.y > height) {
-      if (!f.cut) {
+      if (!f.cut && f.fatal){
         lives--;
       }else{
         points += 5;
