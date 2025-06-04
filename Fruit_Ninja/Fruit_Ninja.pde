@@ -60,6 +60,9 @@ void draw() {
     Fruit f = fruits.get(i);
     f.visualizer();
     f.trySlice(mouseX, mouseY);
+    stroke(100, 145, 200);
+    strokeWeight(12);
+    line(mouseX, mouseY, pmouseX, pmouseY);
     if (f.y > height) {
       if (!f.cut && f.fatal){
         lives--;
