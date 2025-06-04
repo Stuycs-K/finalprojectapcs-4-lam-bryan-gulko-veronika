@@ -60,7 +60,7 @@ void draw() {
     Fruit f = fruits.get(i);
     f.visualizer();
     f.trySlice(mouseX, mouseY);
-    stroke(100, 145, 200);
+    stroke(255, 255, 255);
     strokeWeight(12);
     line(mouseX, mouseY, pmouseX, pmouseY);
     if (f.y > height) {
