@@ -37,6 +37,7 @@ void mousePressed() {
   }
 }
 
+
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
@@ -77,7 +78,10 @@ void draw() {
   }
      fill(0);
   textSize(24);
-  text("Points: " + points, 20, 60);
+  fill(255, 255, 255);
+  text("Points: " + points, 150, 60);
+  text("Speed: " + speed, 300, 60);
+  text("Frequency: " + frequency, 450, 60);
   if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
     noLoop(); 
