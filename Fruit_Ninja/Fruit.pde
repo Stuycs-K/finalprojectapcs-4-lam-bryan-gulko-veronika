@@ -6,39 +6,51 @@ class Fruit{
   int nameIndex;
   String current;
   boolean cut;
+  boolean fatal;
   int x;
   int y;
   float speed;
   PImage currentImage;
     boolean bomb_cut;
+    int mass;
+    PVector position, velocity, acceleration;
 
   
   public Fruit(double s){
      nameIndex = (int)(Math.random() * name.length);
      cut = false;
+     fatal = true;
      current = full[nameIndex];
      currentImage = loadImage(current);
-     // check these bounds
-    x = (int)(Math.random() * (width - 60) + 30);
-     y = 0;
-     speed = (float)s;
-  }
+    mass = 100;     
+     boolean fromLeft = Math.random() < 0.5;
+    if (fromLeft) {
+      position = new PVector(0, height);
+      velocity = new PVector((float)(Math.random() * 4 + 2), (float)(-Math.random() * 8 - 4)); // right and upward
+    } else {
+      position = new PVector(width, height);
+      velocity = new PVector((float)(-Math.random() * 4 - 2), (float)(-Math.random() * 8 - 4)); // left and upward
+    }
+      acceleration = new PVector(0, 0);
+    }
   
   void visualizer(){
     gravity();
-    image(currentImage, x, y, 75, 75);
+    image(currentImage, x, y, 100, 100);
   }
   
   void gravity(){
+    x += speed;
     y += speed;
   }
   
   void trySlice(int mx, int my) {
     if (!cut) {
-      int halfW = 38; 
-      int halfH = 38;
+      int halfW = 50; 
+      int halfH = 50;
       if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
         cut = true;
+        fatal = false;
         current = sliced[nameIndex];
         currentImage = loadImage(current);
       }
