@@ -28,7 +28,7 @@ void setup() {
 }
 
 void mousePressed() {
-  if (mode == 0) {
+  if (mode == 0 && frequency > 0 && speed > 0) {
     setMode(1); // Start game
   } else if (mode == 1) {
     for (Fruit f : fruits) {
@@ -37,6 +37,22 @@ void mousePressed() {
   }
 }
 
+void keyPressed(){
+  if (mode == 0){
+    if (key >= 'a' && key <= 'm'){
+      speed += 1;
+    }
+    else if (key >= 'n' && key <= 'z'){
+      speed -= 1;
+    }
+    else if (key >= 'A' && key <= 'M'){
+      frequency += 0.5;
+    }
+    else if (key >= 'N' && key <= 'Z'){
+      frequency -= 0.5;
+    }
+  }
+}
 
 void draw() {
   if (mode == 0) {
