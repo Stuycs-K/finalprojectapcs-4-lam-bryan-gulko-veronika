@@ -23,12 +23,10 @@ class Fruit{
      fatal = true;
      current = full[nameIndex];
      currentImage = loadImage(current);
-<<<<<<< HEAD
      // check these bounds
     x = 0;
      y = Math.min((int)(Math.random() * (height - 60) + 30), height/2 - 200);
      speed = (float)s;
-=======
     mass = 100;     
      boolean fromLeft = Math.random() < 0.5;
     if (fromLeft) {
@@ -50,7 +48,6 @@ class Fruit{
     currentImage = loadImage(current);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
->>>>>>> Veronika
   }
   
    PVector attractTo(Fruit other) {
@@ -78,16 +75,6 @@ class Fruit{
 
   
   void visualizer(){
-<<<<<<< HEAD
-    gravity();
-    image(currentImage, x, y, 100, 100);
-  }
-  
-  void gravity(){
-    x += speed;
-    y += speed;
-  }
-=======
     image(currentImage, position.x, position.y, 100, 100);
   }
   
@@ -97,11 +84,7 @@ class Fruit{
     if (!cut) {
       int halfW = 50; 
       int halfH = 50;
-<<<<<<< HEAD
-      if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
-=======
       if (mx >= position.x - halfW && mx <= position.x + halfW && my >= position.y - halfH && my <= position.y + halfH) {
->>>>>>> Veronika
         cut = true;
         fatal = false;
         current = sliced[nameIndex];
