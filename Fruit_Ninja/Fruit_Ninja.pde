@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   int mode;
   Fruit center;
   int lives;
@@ -11,6 +12,22 @@
   int lastSpawnTime; 
   
   ArrayList<Fruit> fruits;
+=======
+int mode;
+Fruit center;
+int lives;
+double speed;
+double frequency;
+int points;
+
+PImage titleScreen;
+PImage deadScreen;
+PImage gameScreen;
+PImage heart;
+
+int lastSpawnTime; 
+ArrayList<Fruit> fruits;
+>>>>>>> Veronika
 
 void setup() {
   size(800, 800);
@@ -26,7 +43,11 @@ void setup() {
   heart = loadImage("heart.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
+<<<<<<< HEAD
   center = new Fruit(400, 500);
+=======
+  center = new Fruit(width / 2, height / 2);
+>>>>>>> Veronika
 }
 
 void mousePressed() {
@@ -63,6 +84,7 @@ void draw() {
     Fruit f = fruits.get(i);
     f.move();
     f.visualizer();
+    f.applyForce(f.attractTo(center));
     f.trySlice(mouseX, mouseY);
     f.applyForce(f.attractTo(center));
     stroke(255, 255, 255);
@@ -77,10 +99,14 @@ void draw() {
       fruits.remove(i);
     }
   }
+<<<<<<< HEAD
   for(int i = 0; i < lives; i++){
      image(heart, 20 + (i * 40), 30, 40, 40);
   }
      fill(0);
+=======
+  fill(0);
+>>>>>>> Veronika
   textSize(24);
   text("Points: " + points, 20, 60);
   if (lives <= 0) {
