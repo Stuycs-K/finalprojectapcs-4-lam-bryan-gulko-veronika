@@ -57,6 +57,10 @@ void keyPressed(){
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
+    textSize(24);
+    fill(255, 255, 255);
+    text("Speed: " + speed, 250, 350);
+    text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 350);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
   if (millis() - lastSpawnTime >= frequency * 1000) {
@@ -97,7 +101,7 @@ void draw() {
   fill(255, 255, 255);
   text("Points: " + points, 150, 60);
   text("Speed: " + speed, 300, 60);
-  text("Frequency: " + frequency, 450, 60);
+  text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
   if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
     noLoop(); 
