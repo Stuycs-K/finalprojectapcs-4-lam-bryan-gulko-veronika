@@ -71,7 +71,7 @@ class Fruit{
 
   
   void visualizer(){
-    image(currentImage, x, y, 100, 100);
+    image(currentImage, position.x, position.y, 100, 100);
   }
   
   

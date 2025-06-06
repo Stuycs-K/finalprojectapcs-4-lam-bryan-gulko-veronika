@@ -70,7 +70,7 @@ void draw() {
       fruits.remove(i);
     }
   }
-     fill(0);
+  fill(0);
   textSize(24);
   text("Lives: " + lives, 20, 30);
   text("Points: " + points, 20, 60);
