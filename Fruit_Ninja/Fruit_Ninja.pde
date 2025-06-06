@@ -1,14 +1,17 @@
-  int mode;
-  int lives;
-  double speed;
-  double frequency;
-  int points;
-  PImage titleScreen;
-  PImage deadScreen;
-  PImage gameScreen;
-  int lastSpawnTime; 
-  
-  ArrayList<Fruit> fruits;
+int mode;
+Fruit center;
+int lives;
+double speed;
+double frequency;
+int points;
+
+PImage titleScreen;
+PImage deadScreen;
+PImage gameScreen;
+PImage heart;
+
+int lastSpawnTime; 
+ArrayList<Fruit> fruits;
 
 void setup() {
   size(800, 800);
