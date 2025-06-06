@@ -1,4 +1,5 @@
   int mode;
+  Fruit center;
   int lives;
   double speed;
   double frequency;
@@ -16,7 +17,7 @@ void setup() {
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
   lives = 3;
-  speed = 10;
+  speed = 1;
   points = 0;
   frequency = 1;
   titleScreen = loadImage("loading_screen.png");
@@ -25,6 +26,7 @@ void setup() {
   heart = loadImage("heart.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
+  center = new Fruit(400, 500);
 }
 
 void mousePressed() {
@@ -42,6 +44,7 @@ void draw() {
     image(titleScreen, 0, 0, width, height);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
+  center.visualizer();
   if (millis() - lastSpawnTime >= frequency * 1000) {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
        fruits.add(new FruitBomb(speed));
@@ -58,8 +61,10 @@ void draw() {
     }
   for (int i = fruits.size() - 1; i >= 0; i--) {
     Fruit f = fruits.get(i);
+    f.move();
     f.visualizer();
     f.trySlice(mouseX, mouseY);
+    f.applyForce(f.attractTo(center));
     stroke(255, 255, 255);
     strokeWeight(12);
     line(mouseX, mouseY, pmouseX, pmouseY);
