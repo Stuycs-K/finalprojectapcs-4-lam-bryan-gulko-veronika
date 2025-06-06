@@ -14,8 +14,8 @@ class FruitBomb extends Fruit{
   
   @Override
   void trySlice(int mx, int my) {
-    int w = 38;
-    int h = 38;
+    int w = 50;
+    int h = 50;
     if (mx >= x - w && mx <= x + w && my >= y - h && my <= y + h && !cut) {
       cut = true;
       currentImage = explosionImg;
