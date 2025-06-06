@@ -21,24 +21,25 @@ class Fruit{
      current = full[nameIndex];
      currentImage = loadImage(current);
      // check these bounds
-    x = (int)(Math.random() * (width - 60) + 30);
-     y = 0;
+    x = 0;
+     y = Math.min((int)(Math.random() * (height - 60) + 30), height/2 - 200);
      speed = (float)s;
   }
   
   void visualizer(){
     gravity();
-    image(currentImage, x, y, 75, 75);
+    image(currentImage, x, y, 100, 100);
   }
   
   void gravity(){
+    x += speed;
     y += speed;
   }
   
   void trySlice(int mx, int my) {
     if (!cut) {
-      int halfW = 38; 
-      int halfH = 38;
+      int halfW = 50; 
+      int halfH = 50;
       if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
         cut = true;
         fatal = false;
