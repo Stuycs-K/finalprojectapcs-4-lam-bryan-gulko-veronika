@@ -16,7 +16,7 @@ class HardFruit extends Fruit{
   void trySlice(int mx, int my) {
     int w = 38;
     int h = 38;
-    if (mx >= x - w && mx <= x + w && my >= y - h && my <= y + h && !cut) {
+      if (mx >= position.x - w && mx <= position.x + w && my >= position.y - h && my <= position.y + h && !cut) {
       fruitLife -= 1;
       if (fruitLife == 0){
         current = slicedH[nameIndex];

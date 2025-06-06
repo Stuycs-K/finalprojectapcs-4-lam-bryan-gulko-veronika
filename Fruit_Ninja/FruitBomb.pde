@@ -15,7 +15,7 @@ class FruitBomb extends Fruit{
   void trySlice(int mx, int my) {
     int w = 38;
     int h = 38;
-    if (mx >= x - w && mx <= x + w && my >= y - h && my <= y + h && !cut) {
+      if (mx >= position.x - w && mx <= position.x + w && my >= position.y - h && my <= position.y + h) {
       cut = true;
       currentImage = explosionImg;
       setMode(2);
