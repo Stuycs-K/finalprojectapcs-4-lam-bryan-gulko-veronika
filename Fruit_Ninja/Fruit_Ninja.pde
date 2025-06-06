@@ -26,6 +26,7 @@ void setup() {
   deadScreen = loadImage("dead_screen.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
+  center = new Fruit(width / 2, height / 2);
 }
 
 void mousePressed() {
