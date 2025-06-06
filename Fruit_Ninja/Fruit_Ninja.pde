@@ -1,5 +1,4 @@
 int mode;
-Fruit center;
 int lives;
 double speed;
 double frequency;
@@ -10,7 +9,7 @@ PImage deadScreen;
 PImage gameScreen;
 PImage heart;
 
-int lastSpawnTime; 
+int lastSpawnTime;
 ArrayList<Fruit> fruits;
 
 void setup() {
@@ -27,7 +26,6 @@ void setup() {
   heart = loadImage("heart.png");
   fruits = new ArrayList<Fruit>();
   lastSpawnTime = millis();
-  center = new Fruit(width / 2, height / 2);
 }
 
 void mousePressed() {
@@ -48,8 +46,7 @@ void draw() {
   center.visualizer();
   if (millis() - lastSpawnTime >= frequency * 1000) {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
-       fruits.add(new FruitBomb(speed));
-    } 
+       fruits.add(new FruitBomb(speed));}
     else if (Math.random() < 0.3){
       fruits.add(new HardFruit(speed));}
     else if (Math.random() < 0.4){
@@ -64,9 +61,8 @@ void draw() {
     Fruit f = fruits.get(i);
     f.move();
     f.visualizer();
-    f.applyForce(f.attractTo(center));
+    //f.applyForce(f.attractTo(center));
     f.trySlice(mouseX, mouseY);
-    f.applyForce(f.attractTo(center));
     stroke(255, 255, 255);
     strokeWeight(12);
     line(mouseX, mouseY, pmouseX, pmouseY);
@@ -87,7 +83,7 @@ void draw() {
   text("Points: " + points, 20, 60);
   if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
-    noLoop(); 
+    noLoop();
   }
   }
   else if(mode == 2){
@@ -98,7 +94,7 @@ void draw() {
     lives = l;
     if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
-    noLoop(); 
+    noLoop();
   }
   }
 

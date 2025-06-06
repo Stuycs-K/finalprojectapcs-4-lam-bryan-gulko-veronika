@@ -30,11 +30,11 @@ class Fruit{
     mass = 100;     
      boolean fromLeft = Math.random() < 0.5;
     if (fromLeft) {
-      position = new PVector(0, height);
-      velocity = new PVector((float)(Math.random() * 4 + 2), (float)(-Math.random() * 8 - 4)); // right and upward
+      position = new PVector(0, 0);
+      velocity = new PVector((float)(Math.random() * 4 + 2), -(float)(-Math.random() * 8 - 4)); // right and upward
     } else {
-      position = new PVector(width, height);
-      velocity = new PVector((float)(-Math.random() * 4 - 2), (float)(-Math.random() * 8 - 4)); // left and upward
+      position = new PVector(width, 0);
+      velocity = new PVector((float)(-Math.random() * 4 - 2), -(float)(-Math.random() * 8 - 4)); // left and upward
     }
       acceleration = new PVector(0, 0);
     }
@@ -49,7 +49,7 @@ class Fruit{
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
   }
-  
+  /*
    PVector attractTo(Fruit other) {
     float distance = PVector.sub(other.position, position).mag();
     distance = max(15.0, distance);
@@ -64,10 +64,10 @@ class Fruit{
       PVector acc = PVector.div(f, mass);
       acceleration.add(acc);
   }
+  */
   
   void move(){
     PVector gravity = new PVector(0, 0.2); 
-    applyForce(gravity);
     velocity.add(acceleration);
     position.add(velocity);
     acceleration.mult(0);
@@ -78,7 +78,6 @@ class Fruit{
     image(currentImage, position.x, position.y, 100, 100);
   }
   
->>>>>>> Veronika
   
   void trySlice(int mx, int my) {
     if (!cut) {
