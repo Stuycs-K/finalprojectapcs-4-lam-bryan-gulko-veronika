@@ -35,6 +35,17 @@ class Fruit{
       acceleration = new PVector(0, 0);
     }
   
+
+   public Fruit(int x, int y) {
+    position = new PVector(x, y);
+    nameIndex = (int)(Math.random() * name.length);
+    mass = 100;
+    current = full[nameIndex];
+    currentImage = loadImage(current);
+    velocity = new PVector(0, 0);
+    acceleration = new PVector(0, 0);
+  }
+  
    PVector attractTo(Fruit other) {
     float distance = PVector.sub(other.position, position).mag();
     distance = max(15.0, distance);
@@ -51,7 +62,7 @@ class Fruit{
   }
   
   void move(){
-    PVector gravity = new PVector(0, 0.2); // downward gravity
+    PVector gravity = new PVector(0, 0.2); 
     applyForce(gravity);
     velocity.add(acceleration);
     position.add(velocity);
@@ -60,14 +71,9 @@ class Fruit{
 
   
   void visualizer(){
-    gravity();
     image(currentImage, x, y, 100, 100);
   }
   
-  void gravity(){
-    x += speed;
-    y += speed;
-  }
   
   void trySlice(int mx, int my) {
     if (!cut) {
