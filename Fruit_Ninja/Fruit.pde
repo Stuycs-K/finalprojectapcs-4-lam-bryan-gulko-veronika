@@ -50,6 +50,15 @@ class Fruit{
       acceleration.add(acc);
   }
   
+  void move(){
+    PVector gravity = new PVector(0, 0.2); // downward gravity
+    applyForce(gravity);
+    velocity.add(acceleration);
+    position.add(velocity);
+    acceleration.mult(0);
+  }
+
+  
   void visualizer(){
     gravity();
     image(currentImage, x, y, 100, 100);
