@@ -57,7 +57,9 @@ void draw() {
     }
   for (int i = fruits.size() - 1; i >= 0; i--) {
     Fruit f = fruits.get(i);
+    f.move();
     f.visualizer();
+    f.applyForce(f.attractTo(center));
     f.trySlice(mouseX, mouseY);
     if (f.y > height) {
       if (!f.cut) {
