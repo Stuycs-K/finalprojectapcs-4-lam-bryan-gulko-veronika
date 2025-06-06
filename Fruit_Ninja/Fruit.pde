@@ -11,9 +11,10 @@ class Fruit{
   int y;
   float speed;
   PImage currentImage;
-    boolean bomb_cut;
-    int mass;
-    PVector position, velocity, acceleration;
+  boolean bomb_cut;
+  int mass;
+  PVector position, velocity, acceleration;
+  double G = 200;
 
   
   public Fruit(double s){
@@ -33,6 +34,21 @@ class Fruit{
     }
       acceleration = new PVector(0, 0);
     }
+  
+   PVector attractTo(Fruit other) {
+    float distance = PVector.sub(other.position, position).mag();
+    distance = max(15.0, distance);
+    float mag = (float)(G * mass * other.mass) / (distance * distance);
+    PVector force = PVector.sub(other.position, position);
+    force.normalize();
+     force.mult(mag);
+    return force;
+  }
+  
+   void applyForce(PVector f) {
+      PVector acc = PVector.div(f, mass);
+      acceleration.add(acc);
+  }
   
   void visualizer(){
     gravity();
