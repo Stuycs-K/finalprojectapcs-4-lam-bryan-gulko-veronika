@@ -39,7 +39,7 @@ class Fruit{
     if (!cut) {
       int halfW = 38; 
       int halfH = 38;
-      if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH) {
+      if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH){
         cut = true;
         fatal = false;
         current = sliced[nameIndex];

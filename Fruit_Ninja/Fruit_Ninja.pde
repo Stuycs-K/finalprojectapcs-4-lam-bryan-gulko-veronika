@@ -102,7 +102,7 @@ void draw() {
   text("Points: " + points, 150, 60);
   text("Speed: " + speed, 300, 60);
   text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
-  if (lives <= 0) {
+  if (lives <= 0){
     text("Game Over!", width/2 - 60, height/2);
     noLoop(); 
   }
