@@ -3,7 +3,7 @@ int lives;
 double speed;
 double frequency;
 int points;
-
+Fruit center;
 PImage titleScreen;
 PImage deadScreen;
 PImage gameScreen;
@@ -13,6 +13,8 @@ int lastSpawnTime;
 ArrayList<Fruit> fruits;
 
 void setup() {
+    center = new Fruit((int)width/2, height + 100000);
+
   size(800, 800);
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
@@ -61,7 +63,7 @@ void draw() {
     Fruit f = fruits.get(i);
     f.move();
     f.visualizer();
-    //f.applyForce(f.attractTo(center));
+    f.applyForce(f.attractTo(center));
     f.trySlice(mouseX, mouseY);
     stroke(255, 255, 255);
     strokeWeight(12);
