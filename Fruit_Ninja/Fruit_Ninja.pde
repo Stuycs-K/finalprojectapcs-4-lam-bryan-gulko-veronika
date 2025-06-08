@@ -13,9 +13,10 @@ int lastSpawnTime;
 ArrayList<Fruit> fruits;
 
 void setup() {
+  size(800, 800);
     center = new Fruit((int)width/2, height + 100000);
 
-  size(800, 800);
+  
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
   lives = 3;
@@ -57,6 +58,8 @@ void keyPressed(){
   }
 }
 
+
+
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
@@ -64,14 +67,19 @@ void draw() {
     fill(255, 255, 255);
     text("Speed: " + speed, 250, 350);
     text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 350);
-  } else if (mode == 1) {
+  } 
+  
+  
+  else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
   center.visualizer();
   if (millis() - lastSpawnTime >= frequency * 1000) {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
-       fruits.add(new FruitBomb(speed));}
+       fruits.add(new FruitBomb(speed));
+     }
     else if (Math.random() < 0.3){
-      fruits.add(new HardFruit(speed));}
+      fruits.add(new HardFruit(speed));
+    }
     else if (Math.random() < 0.4){
       fruits.add(new Trash(speed));
     }
@@ -80,6 +88,8 @@ void draw() {
     }
     lastSpawnTime = millis();
     }
+    
+    
   for (int i = fruits.size() - 1; i >= 0; i--) {
     Fruit f = fruits.get(i);
     f.move();
@@ -89,7 +99,10 @@ void draw() {
     stroke(255, 255, 255);
     strokeWeight(12);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    if (f.y > height) {
+    if (f.position.y > height) {
+      if (!f.cut && f.fatal) {
+        lives--;
+      }
       fruits.remove(i);
     }
   }
@@ -103,19 +116,29 @@ void draw() {
   text("Speed: " + speed, 300, 60);
   text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
   if (lives <= 0){
-    text("Game Over!", width/2 - 60, height/2);
+    setMode(2);
+    image(deadScreen, 0,0, width, height);
     noLoop();
   }
   }
+  
   else if(mode == 2){
     image(deadScreen, 0,0, width, height);
   }
+  
+  
 }
+
+
+
+
+
+
  void setLives(int l) {
     lives = l;
     if (lives <= 0) {
-      text("Game Over!", width/2 - 60, height/2);
-      noLoop();
+      setMode(2);
+      image(deadScreen, 0,0, width, height);
     }
   }
 
