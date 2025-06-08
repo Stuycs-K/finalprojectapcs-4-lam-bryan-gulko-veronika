@@ -92,10 +92,8 @@ class Fruit{
         current = sliced[nameIndex];
         currentImage = loadImage(current);
         setPoints(points + 5);
-      }else if (position.y > height && !cut && fatal){
-        lives--;
-      }
     }
   }
   
+}
 }
