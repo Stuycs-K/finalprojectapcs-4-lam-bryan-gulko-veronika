@@ -17,6 +17,7 @@ class Trash extends Fruit{
     int h = 50;
     if (mx >= position.x - w && mx <= position.x + w && my >= position.y - h && my <= position.y + h){
       fatal = true;
+      lives--;
     }
   }
 }

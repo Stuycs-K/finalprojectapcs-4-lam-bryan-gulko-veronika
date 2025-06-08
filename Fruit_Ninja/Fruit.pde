@@ -30,10 +30,10 @@ class Fruit{
     mass = 100;     
      boolean fromLeft = Math.random() < 0.5;
     if (fromLeft) {
-      position = new PVector(0, height);
+      position = new PVector(0, height - 100);
       velocity = new PVector((float)(Math.random() * 4 + 2), (float)(-Math.random() * 28 - 4)); // right and upward
     } else {
-      position = new PVector(width, height);
+      position = new PVector(width, height - 100);
       velocity = new PVector((float)(-Math.random() * 4 - 2), (float)(-Math.random() * 28 - 4)); // left and upward
     }
       acceleration = new PVector(0, 0);
@@ -95,6 +95,8 @@ class Fruit{
         current = sliced[nameIndex];
         currentImage = loadImage(current);
         setPoints(points + 5);
+      }else if (position.y > height && !cut && fatal){
+        lives--;
       }
     }
   }
