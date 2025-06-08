@@ -31,7 +31,7 @@ void setup() {
 }
 
 void mousePressed() {
-  if (mode == 0) {
+  if (mode == 0 && frequency > 0 && speed > 0) {
     setMode(1); // Start game
   } else if (mode == 1) {
     for (Fruit f : fruits) {
@@ -40,9 +40,30 @@ void mousePressed() {
   }
 }
 
+void keyPressed(){
+  if (mode == 0){
+    if (key >= 'a' && key <= 'm'){
+      speed += 1;
+    }
+    else if (key >= 'n' && key <= 'z'){
+      speed -= 1;
+    }
+    else if (key >= 'A' && key <= 'M'){
+      frequency += 0.2;
+    }
+    else if (key >= 'N' && key <= 'Z'){
+      frequency -= 0.2;
+    }
+  }
+}
+
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
+    textSize(24);
+    fill(255, 255, 255);
+    text("Speed: " + speed, 250, 350);
+    text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 350);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
   center.visualizer();
@@ -71,7 +92,7 @@ void draw() {
     if (f.y > height) {
       if (!f.cut && f.fatal){
         lives--;
-      }else{
+      }else if (f.cut && !f.fatal){
         points += 5;
       }
       fruits.remove(i);
@@ -82,8 +103,11 @@ void draw() {
   }
      fill(0);
   textSize(24);
-  text("Points: " + points, 20, 60);
-  if (lives <= 0) {
+  fill(255, 255, 255);
+  text("Points: " + points, 150, 60);
+  text("Speed: " + speed, 300, 60);
+  text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
+  if (lives <= 0){
     text("Game Over!", width/2 - 60, height/2);
     noLoop();
   }
