@@ -94,6 +94,7 @@ class Fruit{
         fatal = false;
         current = sliced[nameIndex];
         currentImage = loadImage(current);
+        setPoints(points + 5);
       }
     }
   }

@@ -24,6 +24,7 @@ class HardFruit extends Fruit{
         currentImage = loadImage(current);
         cut = true;
         fatal = false;
+        setPoints(points + 5);
       }
     }
   }

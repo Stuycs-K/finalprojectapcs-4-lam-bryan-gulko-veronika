@@ -92,8 +92,6 @@ void draw() {
     if (f.y > height) {
       if (!f.cut && f.fatal){
         lives--;
-      }else if (f.cut && !f.fatal){
-        points += 5;
       }
       fruits.remove(i);
     }
