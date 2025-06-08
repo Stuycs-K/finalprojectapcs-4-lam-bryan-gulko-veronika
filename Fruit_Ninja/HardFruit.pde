@@ -24,6 +24,10 @@ class HardFruit extends Fruit{
         currentImage = loadImage(current);
         cut = true;
         fatal = false;
+        setPoints(points + 5);
+      }
+      else if (position.y > height && !cut && fatal){
+        lives--;
       }
     }
   }

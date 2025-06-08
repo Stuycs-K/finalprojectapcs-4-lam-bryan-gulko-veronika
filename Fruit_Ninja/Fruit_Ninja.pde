@@ -90,11 +90,6 @@ void draw() {
     strokeWeight(12);
     line(mouseX, mouseY, pmouseX, pmouseY);
     if (f.y > height) {
-      if (!f.cut && f.fatal){
-        lives--;
-      }else if (f.cut && !f.fatal){
-        points += 5;
-      }
       fruits.remove(i);
     }
   }
@@ -119,9 +114,9 @@ void draw() {
  void setLives(int l) {
     lives = l;
     if (lives <= 0) {
-    text("Game Over!", width/2 - 60, height/2);
-    noLoop();
-  }
+      text("Game Over!", width/2 - 60, height/2);
+      noLoop();
+    }
   }
 
   void setPoints(int p) {
