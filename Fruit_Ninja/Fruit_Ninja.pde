@@ -38,6 +38,9 @@ void mousePressed() {
     for (Fruit f : fruits) {
       f.trySlice(mouseX, mouseY);
     }
+    if (mouseX >= width - 30 && mouseY <= 30){
+      setMode(0);
+    }
   }
 }
 
