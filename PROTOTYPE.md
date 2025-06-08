@@ -54,21 +54,21 @@ How you are breaking down the project and who is responsible for which parts.
    - [ ] Points feature to add points for each fruit cut and lead to progression (Bryan)
 
 
-- [ ] Create Fruit Subclasses
-   ~ - [ ] Banana (Veronika)
-    - [ ] Kiwi  (Bryan)
-    - [ ] Apple (Veronika)
-    - [ ] Pineapple (Bryan)
-    - [ ] Orange (Veronika) ~
+~- [ ] Create Fruit Subclasses~
+   ~- [ ] Banana (Veronika)~
+   ~- [ ] Kiwi  (Bryan)~
+   ~- [ ] Apple (Veronika)~
+   ~- [ ] Pineapple (Bryan)~
+   ~- [ ] Orange (Veronika)~
     
-# Updated:
+## Updated:
 
 All of the regular fruits are part of the parent Fruit Class. Only  trash and double tap fruits are subclasses. Lives and progression will be done in main.
    
-    - [ ] Create double tap fruit classes
-        - [ ] Coconut (Bryan)
-        - [ ] Watermelon (Veronika)
-        - [ ] Dragon Fruit (Bryan)
+ - [ ] Create double tap fruit classes
+    - [ ] Coconut (Bryan)
+    - [ ] Watermelon (Veronika)
+    - [ ] Dragon Fruit (Bryan)
 
 
 - [ ] Devop lives system
@@ -76,15 +76,18 @@ All of the regular fruits are part of the parent Fruit Class. Only  trash and do
     - [ ] Take a life for each fruit that hits the ground without being sliced (Bryan)
     - [ ] Create bombs that annihilate everything (Veronika)
 
+## Updated:
 
-- [ ] Progression of Game
-    - [ ] Speed up (fruits accelerate) (Bryan)
-    - [ ] Increase Frequency of fruits falling (Veronika)
+Instead of choosing easy, medium, and hard, the player gets to choose the speed and frequency at the beginning, which remains constant throughout the game play. This allows for more customization and a steadier game play, since the actual Fruit Ninja doesn't merge in the game level.
+
+~- [ ] Progression of Game~
+    ~- [ ] Speed up (fruits accelerate) (Bryan)~
+    ~- [ ] Increase Frequency of fruits falling (Veronika)~
 
 
 - [ ] Loading Screen
     - [ ] Start Button (Bryan)
-    - [ ] Description of fruits/lives/points (Veronika)
-    - [ ] Options for easy, medium, and hard, which affects the starting frequency and speed (Bryan)
+    ~- [ ] Description of fruits/lives/points (Veronika)~
+    ~- [ ] Options for easy, medium, and hard, which affects the starting~ ~frequency and speed (Bryan)~
 
 
