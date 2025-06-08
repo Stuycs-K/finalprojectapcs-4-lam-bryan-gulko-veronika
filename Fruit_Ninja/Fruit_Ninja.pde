@@ -1,22 +1,25 @@
-  int mode;
-  int lives;
-  double speed;
-  double frequency;
-  int points;
-  PImage titleScreen;
-  PImage deadScreen;
-  PImage gameScreen;
-  PImage heart;
-  int lastSpawnTime; 
-  
-  ArrayList<Fruit> fruits;
+int mode;
+int lives;
+double speed;
+double frequency;
+int points;
+Fruit center;
+PImage titleScreen;
+PImage deadScreen;
+PImage gameScreen;
+PImage heart;
+
+int lastSpawnTime;
+ArrayList<Fruit> fruits;
 
 void setup() {
+    center = new Fruit((int)width/2, height + 100000);
+
   size(800, 800);
   mode = 0;
   titleScreen = loadImage("loading_screen.png");
   lives = 3;
-  speed = 10;
+  speed = 1;
   points = 0;
   frequency = 1;
   titleScreen = loadImage("loading_screen.png");
@@ -28,7 +31,7 @@ void setup() {
 }
 
 void mousePressed() {
-  if (mode == 0 && frequency > 0 && frequency < 2 && speed > 0) {
+  if (mode == 0 && frequency > 0 && speed > 0) {
     setMode(1); // Start game
   } else if (mode == 1) {
     for (Fruit f : fruits) {
@@ -63,10 +66,10 @@ void draw() {
     text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 350);
   } else if (mode == 1) {
   image(gameScreen, 0, 0, width, height);
+  center.visualizer();
   if (millis() - lastSpawnTime >= frequency * 1000) {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
-       fruits.add(new FruitBomb(speed));
-    } 
+       fruits.add(new FruitBomb(speed));}
     else if (Math.random() < 0.3){
       fruits.add(new HardFruit(speed));}
     else if (Math.random() < 0.4){
@@ -79,7 +82,9 @@ void draw() {
     }
   for (int i = fruits.size() - 1; i >= 0; i--) {
     Fruit f = fruits.get(i);
+    f.move();
     f.visualizer();
+    f.applyForce(f.attractTo(center));
     f.trySlice(mouseX, mouseY);
     stroke(255, 255, 255);
     strokeWeight(12);
@@ -104,7 +109,7 @@ void draw() {
   text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
   if (lives <= 0){
     text("Game Over!", width/2 - 60, height/2);
-    noLoop(); 
+    noLoop();
   }
   }
   else if(mode == 2){
@@ -115,7 +120,7 @@ void draw() {
     lives = l;
     if (lives <= 0) {
     text("Game Over!", width/2 - 60, height/2);
-    noLoop(); 
+    noLoop();
   }
   }
 

@@ -11,7 +11,10 @@ class Fruit{
   int y;
   float speed;
   PImage currentImage;
-    boolean bomb_cut;
+  boolean bomb_cut;
+  int mass;
+  PVector position, velocity, acceleration;
+  double G = 200;
 
   
   public Fruit(double s){
@@ -21,25 +24,72 @@ class Fruit{
      current = full[nameIndex];
      currentImage = loadImage(current);
      // check these bounds
-    x = (int)(Math.random() * (width - 60) + 30);
-     y = 0;
+    x = 0;
+     y = Math.min((int)(Math.random() * (height - 60) + 30), height/2 - 200);
      speed = (float)s;
+    mass = 100;     
+     boolean fromLeft = Math.random() < 0.5;
+    if (fromLeft) {
+      position = new PVector(0, height);
+      velocity = new PVector((float)(Math.random() * 4 + 2), (float)(-Math.random() * 28 - 4)); // right and upward
+    } else {
+      position = new PVector(width, height);
+      velocity = new PVector((float)(-Math.random() * 4 - 2), (float)(-Math.random() * 28 - 4)); // left and upward
+    }
+      acceleration = new PVector(0, 0);
+    }
+  
+
+   public Fruit(int x, int y) {
+    position = new PVector(x, y);
+    nameIndex = (int)(Math.random() * name.length);
+    mass = 25000000;
+    current = full[nameIndex];
+    currentImage = loadImage(current);
+    velocity = new PVector(0, 0);
+    acceleration = new PVector(0, 0);
   }
+  
+   PVector attractTo(Fruit other) {
+    float distance = PVector.sub(other.position, position).mag();
+    distance = max(15.0, distance);
+    float mag = (float)(G * mass * other.mass) / (distance * distance);
+    PVector force = PVector.sub(other.position, position);
+    force.normalize();
+     force.mult(mag);
+    return force;
+  }
+  
+   void applyForce(PVector f) {
+      PVector acc = PVector.div(f, mass);
+      acceleration.add(acc);
+  }
+ 
+  
+  void move(){
+    PVector gravity = new PVector(0, 0.2); 
+    velocity.add(acceleration);
+    position.add(velocity);
+    acceleration.mult(0);
+  }
+
   
   void visualizer(){
-    gravity();
-    image(currentImage, x, y, 75, 75);
+    image(currentImage, position.x, position.y, 100, 100);
   }
   
-  void gravity(){
-    y += speed;
-  }
   
   void trySlice(int mx, int my) {
     if (!cut) {
+      /*
       int halfW = 38; 
       int halfH = 38;
       if (mx >= x - halfW && mx <= x + halfW && my >= y - halfH && my <= y + halfH){
+=======
+      */
+      int halfW = 50; 
+      int halfH = 50;
+      if (mx >= position.x - halfW && mx <= position.x + halfW && my >= position.y - halfH && my <= position.y + halfH) {
         cut = true;
         fatal = false;
         current = sliced[nameIndex];
