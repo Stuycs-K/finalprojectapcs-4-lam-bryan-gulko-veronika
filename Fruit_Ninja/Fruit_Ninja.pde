@@ -43,13 +43,7 @@ void mousePressed() {
 
 void keyPressed(){
   if (mode == 0){
-    if (key >= 'a' && key <= 'm'){
-      speed += 1;
-    }
-    else if (key >= 'n' && key <= 'z'){
-      speed -= 1;
-    }
-    else if (key >= 'A' && key <= 'M'){
+    if (key >= 'A' && key <= 'M'){
       frequency += 0.2;
     }
     else if (key >= 'N' && key <= 'Z'){
@@ -63,10 +57,9 @@ void keyPressed(){
 void draw() {
   if (mode == 0) {
     image(titleScreen, 0, 0, width, height);
-    textSize(24);
-    fill(255, 255, 255);
-    text("Speed: " + speed, 250, 350);
-    text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 350);
+    textSize(40);
+    fill(#6c4c25);
+    text((Math.round(frequency * 100) / 100.0), 510, 440);
   } 
   
   
@@ -113,7 +106,6 @@ void draw() {
   textSize(24);
   fill(255, 255, 255);
   text("Points: " + points, 150, 60);
-  text("Speed: " + speed, 300, 60);
   text("Frequency: " + (Math.round(frequency * 100) / 100.0), 450, 60);
   if (lives <= 0){
     setMode(2);
@@ -128,11 +120,6 @@ void draw() {
   
   
 }
-
-
-
-
-
 
  void setLives(int l) {
     lives = l;
