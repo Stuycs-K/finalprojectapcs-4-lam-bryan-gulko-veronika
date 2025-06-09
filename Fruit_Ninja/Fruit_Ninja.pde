@@ -70,10 +70,10 @@ void draw() {
     if (Math.random() < 0.2) {  // 20% chance of being a bomb
        fruits.add(new FruitBomb(speed));
      }
-    else if (Math.random() < 0.3){
+    else if (Math.random() < 0.5){
       fruits.add(new HardFruit(speed));
     }
-    else if (Math.random() < 0.4){
+    else if (Math.random() < 0.6){
       fruits.add(new Trash(speed));
     }
     else {
