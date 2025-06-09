@@ -1,10 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/YxXKqIeT)
 # Project Description
-
-lorem ipsum.
+This Fruit Ninja-inspired slicing game is an interactive desktop arcade experience built using Processing (Java). Players use their mouse like a blade to slice flying fruits, dodge bombs, and rack up points while managing their lives. The game incorporates physics-based motion, diverse fruit behaviors, multiple game modes, and dynamic difficulty adjustment.
 
 # Intended usage:
-
 ## Gameplay Overview
 
 The game consists of **three modes**:
