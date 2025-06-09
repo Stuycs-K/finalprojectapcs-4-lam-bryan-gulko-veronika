@@ -56,3 +56,8 @@ The game consists of **three modes**:
 ### `FruitBomb`
 - **If sliced: immediate game over**
 - Non-fatal if dropped
+
+### `Trash`
+- Includes: water bottles, plastic bags
+- Not initially fatal
+- **Becomes fatal if sliced**, then causes you to lose a life if it drops
