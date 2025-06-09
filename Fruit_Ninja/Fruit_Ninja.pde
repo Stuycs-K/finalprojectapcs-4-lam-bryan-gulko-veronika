@@ -38,8 +38,13 @@ void mousePressed() {
     for (Fruit f : fruits) {
       f.trySlice(mouseX, mouseY);
     }
-    if (mouseX >= width - 30 && mouseY <= 30){
+  } else if (mode == 2){
+    if (mouseX >= width - 40 && mouseY <= 40){
       setMode(0);
+      points = 0;
+      lives = 3;
+      fruits = new ArrayList<Fruit>();
+      frequency = 1;
     }
   }
 }
@@ -113,7 +118,6 @@ void draw() {
   if (lives <= 0){
     setMode(2);
     image(deadScreen, 0,0, width, height);
-    noLoop();
   }
   }
   
