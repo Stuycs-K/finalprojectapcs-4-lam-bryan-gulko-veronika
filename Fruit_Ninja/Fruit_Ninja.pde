@@ -51,10 +51,10 @@ void mousePressed() {
 
 void keyPressed(){
   if (mode == 0){
-    if (key >= 'A' && key <= 'M'){
+    if (key == 'A'){
       frequency += 0.2;
     }
-    else if (key >= 'N' && key <= 'Z'){
+    else if (key == 'N'){
       frequency -= 0.2;
     }
   }
