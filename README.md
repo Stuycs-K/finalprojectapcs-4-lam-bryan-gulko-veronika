@@ -41,11 +41,16 @@ The game consists of **three modes**:
     - Fruit list
     - Frequency (default: 1.0)
 
-## Fruit Types and Behavior
 
+## Fruit Types and Behavior
 ### `Fruit`
 - Default fruit types: apple, kiwi, orange, banana, pineapple
 - Sliced in one hit
+- Fatal if dropped unsliced
+
+### `HardFruit`
+- Includes: coconut, watermelon, dragon fruit
+- Requires **multiple slices** to cut
 - Fatal if dropped unsliced
 
 
