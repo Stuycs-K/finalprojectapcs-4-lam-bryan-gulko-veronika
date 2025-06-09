@@ -1,13 +1,12 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/YxXKqIeT)
-# Project Description
-This Fruit Ninja-inspired slicing game is an interactive desktop arcade experience built using Processing (Java). Players use their mouse like a blade to slice flying fruits, dodge bombs, and rack up points while managing their lives. The game incorporates physics-based motion, diverse fruit behaviors, multiple game modes, and dynamic difficulty adjustment.
+
+# Project Description 
+This Fruit Ninja-inspired slicing game is an interactive desktop arcade experience built using Processing. Players use their mouse like a blade to slice flying fruits, dodge bombs, and rack up points while managing their lives. The game incorporates physics-based motion, diverse fruit behaviors, multiple game modes, and dynamic difficulty adjustment.
 
 # Intended usage:
 ## Gameplay Overview
-
-<<<<<<< HEAD
 To start the game, press the start button using the mouse. If you want to change the frequency (of the time), press 'A' to increase so less fruit appears or press 'N' so more fruit appear at a time. The frequency can become negative, but the game only starts if frequency is above 0. When the game starts, press down on the mouse and start swiping over the fruits. The mouse has to be pressed down on the fruit  in order to cut and some fruits (dragon fruit, watermelon, and coconut) requires at least 2 swipes, and each fruit will add 5 points. Touching a piece of trash or letting a fruit fall without cutting takes away one life. Touching a bomb is an automatic game over. If you lose all lives, press the restart icon on the right hand corner and it resets everything.
-=======
+
 The game consists of **three modes**:
 
 ### 1. **Title Screen (mode 0)**
@@ -17,7 +16,6 @@ The game consists of **three modes**:
   - `N`: Faster spawn rate (increases frequency by 0.2)
   *Note that these keys only work as capitals*
 - Click the mouse to begin the game
->>>>>>> Veronika
   
 ### 2. **Gameplay (mode 1)**
 - Fruits launch upward from either the left or right side of the screen with randomized x-velocity and a set y-velocity (this is done for game pieces to each move up to a predicted height for easier game play)
