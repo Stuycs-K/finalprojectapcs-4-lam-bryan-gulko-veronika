@@ -53,4 +53,6 @@ The game consists of **three modes**:
 - Requires **multiple slices** to cut
 - Fatal if dropped unsliced
 
-
+### `FruitBomb`
+- **If sliced: immediate game over**
+- Non-fatal if dropped
