@@ -32,3 +32,11 @@ The game consists of **three modes**:
   - Score and current fruit frequency are displayed at the top
   - Lives are shown as hearts
 
+### 3. **Game Over Screen (mode 2)**
+- Displayed when the player loses
+- Click the **top-right corner** to return to the title screen
+  - This resets:
+    - Points
+    - Lives
+    - Fruit list
+    - Frequency (default: 1.0)
