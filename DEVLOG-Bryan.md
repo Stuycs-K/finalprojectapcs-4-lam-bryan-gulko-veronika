@@ -45,3 +45,7 @@ Most of the class time was spent looking at and testing Veronika's code for grav
 
 ### 2025-06-08 - Brief Description
 I merged with Veronika's work who changed the move function to use Earth mode physics instead of Orbit mode in order for the fruit to move properly. I also fixed trySlice in the Trash class, so that it used position.x and position.y and 50 for halfW and halfH, so that mouseClicked worked for it. I also changed Veronika's position and velocity vectors, so that they moved a little slower for the player to be able to hit the fruit and have the fruit spawn higher, so that player has a chance at hitting the fruit, as it takes a life or even game over if the fruit is below the display screen when uncut. I also fixed adding points and taking lives, since the original code doesn't work on Earth mode. Instead of checking the fruit when it falls in draw, I had it be done within the Fruit classes, as the fields are not private. This also helps give points instantly for cut fruit and takes a life for cutting trash, as it doesn't wait for it to fall to the ground first, while for uncut fruit there is another if statement to check if the fruit is below the screen. Veronika and I later met to film our video and we made some final adjustments before. I added to mousePressed that if the player clicked on a restart button, all of the settings reset and the player is able to play again. This took about 2 hours.
+
+
+
+### Veronika Gulko: I believe this document accurately reflects the contributions of my teamate.
