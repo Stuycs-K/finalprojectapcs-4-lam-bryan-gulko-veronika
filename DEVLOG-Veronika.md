@@ -38,3 +38,5 @@ Bryan and I called on Zoom to finalize our code. We removed unused variables suc
 
 
 I edited our gameplay demo video on the morning of June 8 to prepare for submission.
+
+Bryan: I believe this document accurately reflects the contributions of my teamate.
