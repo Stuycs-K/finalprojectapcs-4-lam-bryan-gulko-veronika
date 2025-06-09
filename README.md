@@ -61,3 +61,16 @@ The game consists of **three modes**:
 - Includes: water bottles, plastic bags
 - Not initially fatal
 - **Becomes fatal if sliced**, then causes you to lose a life if it drops
+
+
+## Visual Assets
+- `loading_screen.png`: Shown on title screen
+- `game_screen.png`: Background for gameplay
+- `dead_screen.png`: Displayed on game over
+- `heart.png`: Heart icon representing lives
+- `*.png` game piece images:
+  - `kiwi.png`, `kiwi_sliced.png`, `pineapple.png`, `pineapple_sliced.png`, `apple.png`, `apple_sliced.png`, `banana.png`, `banana_sliced.png`, `orange.png`, `orange_sliced.png`
+  - `Bomb.png`, `explosion.png`
+  - `coconut.png`, `coconut_sliced.png`, `dragon.png`, `dragon_sliced.png`, `watermelon.png`, `watermelon_sliced.png`
+  - `trash.png`, `bottle.png`
+
