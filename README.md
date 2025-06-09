@@ -40,3 +40,12 @@ The game consists of **three modes**:
     - Lives
     - Fruit list
     - Frequency (default: 1.0)
+
+## Fruit Types and Behavior
+
+### `Fruit`
+- Default fruit types: apple, kiwi, orange, banana, pineapple
+- Sliced in one hit
+- Fatal if dropped unsliced
+
+
