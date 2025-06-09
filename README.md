@@ -74,3 +74,6 @@ The game consists of **three modes**:
   - `coconut.png`, `coconut_sliced.png`, `dragon.png`, `dragon_sliced.png`, `watermelon.png`, `watermelon_sliced.png`
   - `trash.png`, `bottle.png`
 
+## Known Bugs
+- Hard fruits occasionaly require more than 2 slices due to cutting boundaries not truly being centered on the fruit but rather on the loaded-in image
+- There is no way to tell if trash is cut, coupled with the faulty boundaries for cutting, lives are only sometimes taken off when trash is "cut"
