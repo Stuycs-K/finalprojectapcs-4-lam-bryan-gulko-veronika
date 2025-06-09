@@ -17,3 +17,18 @@ The game consists of **three modes**:
   *Note that these keys only work as capitals*
 - Click the mouse to begin the game
   
+### 2. **Gameplay (mode 1)**
+- Fruits launch upward from either the left or right side of the screen with randomized x-velocity and a set y-velocity (this is done for game pieces to each move up to a predicted height for easier game play)
+- Use the mouse to slice fruits by dragging over them (no clicking required)
+- Each fruit sliced earns **+5 points**
+- **Lives** are lost when:
+  - A fruit game piece falls off the screen unsliced
+  - A player slices trash fruit (which turns fatal when sliced)
+- **Lose Condition**:
+  - Lives reach 0
+  - A bomb is sliced (instant game over)
+- Visual feedback:
+  - White slash line appears as you swipe
+  - Score and current fruit frequency are displayed at the top
+  - Lives are shown as hearts
+
